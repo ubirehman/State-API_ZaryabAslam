@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import CarouselSection from "../../components/CarouselSection/page";
 import MultiStepForm from "../../components/MultiStepForm/page";

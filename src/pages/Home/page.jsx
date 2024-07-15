@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import HomeUI from "./pageUI";
 import { addValue } from "../../store/slices/answerSlice";
 import { useDispatch, useSelector } from "react-redux";
