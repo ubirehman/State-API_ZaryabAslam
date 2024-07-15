@@ -1,39 +1,18 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
+import { submitData } from "../../services/api/sumitData";
 
 const AllAnswers = ({ items, options }) => {
   const values = useSelector((state) => state.answers.values);
 
-  const submitData = async () => {
-    try {
-      const response = await fetch(
-        "https://66941128c6be000fa07e0d57.mockapi.io/answers",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to submit data");
-      }
-
-      console.log("Data submitted successfully", JSON.stringify(values));
-    } catch (error) {
-      console.error("Error submitting data:", error);
-    }
-  };
-
   useEffect(() => {
-    submitData();
+    submitData(values);
   }, []);
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen gradient-bg-lblue-dblue text-white">
+    <div className="flex flex-col items-center justify-center animate-slideInFromLeft">
       <h1 className="text-4xl font-bold pt-10 underline">Summary</h1>
       <div className="w-full max-w-4xl px-6 py-4">
         <div className="flex flex-col items-center">
@@ -52,6 +31,8 @@ const AllAnswers = ({ items, options }) => {
         </div>
       </div>
     </div>
+  </div>
+  
   );
 };
 
