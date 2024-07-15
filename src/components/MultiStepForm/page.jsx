@@ -6,7 +6,10 @@ const MultiStepForm = ({ options, selectedOption, setSelectedOption }) => {
     <div className="flex w-screen h-screen items-center justify-center">
       <div className="flex">
         {options.map((option) => (
-          <div key={option.id} className="flex items-center justify-center gap-8">
+          <div
+            key={option.id}
+            className="flex flex-col items-center justify-center gap-8 group"
+          >
             <Options
               icon={option.icon}
               label={option.label}
