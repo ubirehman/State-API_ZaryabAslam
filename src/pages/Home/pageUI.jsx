@@ -41,10 +41,9 @@ const HomeUI = ({
 
 HomeUI.propTypes = {
   carouselItems: PropTypes.arrayOf(PropTypes.string).isRequired,
-  selectedOption: PropTypes.number.isRequired,
+  selectedOption: PropTypes.number,
   setSelectedOption: PropTypes.func.isRequired,
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  currentIndex: PropTypes.number.isRequired,
+  currentIndex: PropTypes.number,
   setCurrentIndex: PropTypes.func.isRequired,
 };
 

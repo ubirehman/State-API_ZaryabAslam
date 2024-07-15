@@ -26,12 +26,12 @@ const MultiStepForm = ({ options, selectedOption, setSelectedOption }) => {
 MultiStepForm.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       icon: PropTypes.node,
       label: PropTypes.string.isRequired,
     })
   ).isRequired,
-  selectedOption: PropTypes.number.isRequired,
+  selectedOption: PropTypes.number,
   setSelectedOption: PropTypes.func.isRequired,
 };
 
